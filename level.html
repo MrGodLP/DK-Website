@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dumme Kinder</title>
+
+</head>
+<body>
+
+<div class="navbar">
+<ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="level.html" class="active">Levelsystem</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="regeln.html">Regeln</a></li>
+</ul>
+</div>
+
+<h1>Dumme Kinder Levelsystem</h1>
+<h2>TOP 5</h2>
+
+<table class="table table-striped" id="customers">
+    <tr  class="bg-info">
+        <th>Name</th>
+        <th>Punkte</th>
+        <th>Coins</th>
+        <th>Level</th>
+    </tr>
+
+    <tbody id="myTable">
+        
+    </tbody>
+</table>
+<p id="dummekinder">Stand: 21.03.22 18:05, noch in Entwicklung</p>
+
+
+<script>
+	var myArray = [
+	    {'name':'Georgi', 'punkte':'170620', 'coins':"16674", 'level':'8'},
+	    {'name':'Vorce', 'punkte':'173035', 'coins':"17303", 'level':'8'},
+        {'name':'Quinn', 'punkte':'134640', 'coins':"13464", 'level':'8'},
+        {'name':'Mephistho', 'punkte':'122710', 'coins':"10971", 'level':'8'},
+        {'name':'Kuba', 'punkte':'81055', 'coins':"8105", 'level':'7'}
+
+	]
+	
+	buildTable(myArray)
+
+
+
+	function buildTable(data){
+		var table = document.getElementById('myTable')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].name}</td>
+							<td>${data[i].punkte}</td>
+							<td>${data[i].coins}</td>
+                            <td>${data[i].level}</td>
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+
+</script>
+</body>
+</html>
